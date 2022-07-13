@@ -17,18 +17,18 @@ import (
 
 // AddTelegramChannelBody struct for AddTelegramChannelBody
 type AddTelegramChannelBody struct {
-	UserId string `json:"user_id"`
 	TelegramUsername string `json:"telegram_username"`
+	UserId string `json:"user_id"`
 }
 
 // NewAddTelegramChannelBody instantiates a new AddTelegramChannelBody object
 // This constructor will assign default values to properties that have it defined,
 // and makes sure properties required by API are set, but the set of arguments
 // will change when the set of required properties is changed
-func NewAddTelegramChannelBody(userId string, telegramUsername string) *AddTelegramChannelBody {
+func NewAddTelegramChannelBody(telegramUsername string, userId string) *AddTelegramChannelBody {
 	this := AddTelegramChannelBody{}
-	this.UserId = userId
 	this.TelegramUsername = telegramUsername
+	this.UserId = userId
 	return &this
 }
 
@@ -38,30 +38,6 @@ func NewAddTelegramChannelBody(userId string, telegramUsername string) *AddTeleg
 func NewAddTelegramChannelBodyWithDefaults() *AddTelegramChannelBody {
 	this := AddTelegramChannelBody{}
 	return &this
-}
-
-// GetUserId returns the UserId field value
-func (o *AddTelegramChannelBody) GetUserId() string {
-	if o == nil {
-		var ret string
-		return ret
-	}
-
-	return o.UserId
-}
-
-// GetUserIdOk returns a tuple with the UserId field value
-// and a boolean to check if the value has been set.
-func (o *AddTelegramChannelBody) GetUserIdOk() (*string, bool) {
-	if o == nil {
-		return nil, false
-	}
-	return &o.UserId, true
-}
-
-// SetUserId sets field value
-func (o *AddTelegramChannelBody) SetUserId(v string) {
-	o.UserId = v
 }
 
 // GetTelegramUsername returns the TelegramUsername field value
@@ -88,13 +64,37 @@ func (o *AddTelegramChannelBody) SetTelegramUsername(v string) {
 	o.TelegramUsername = v
 }
 
+// GetUserId returns the UserId field value
+func (o *AddTelegramChannelBody) GetUserId() string {
+	if o == nil {
+		var ret string
+		return ret
+	}
+
+	return o.UserId
+}
+
+// GetUserIdOk returns a tuple with the UserId field value
+// and a boolean to check if the value has been set.
+func (o *AddTelegramChannelBody) GetUserIdOk() (*string, bool) {
+	if o == nil {
+		return nil, false
+	}
+	return &o.UserId, true
+}
+
+// SetUserId sets field value
+func (o *AddTelegramChannelBody) SetUserId(v string) {
+	o.UserId = v
+}
+
 func (o AddTelegramChannelBody) MarshalJSON() ([]byte, error) {
 	toSerialize := map[string]interface{}{}
 	if true {
-		toSerialize["user_id"] = o.UserId
+		toSerialize["telegram_username"] = o.TelegramUsername
 	}
 	if true {
-		toSerialize["telegram_username"] = o.TelegramUsername
+		toSerialize["user_id"] = o.UserId
 	}
 	return json.Marshal(toSerialize)
 }

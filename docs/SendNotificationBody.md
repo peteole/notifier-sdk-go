@@ -4,15 +4,15 @@
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**Message** | **string** |  | 
 **UserId** | **string** |  | 
 **Subject** | **string** |  | 
+**Message** | **string** |  | 
 
 ## Methods
 
 ### NewSendNotificationBody
 
-`func NewSendNotificationBody(message string, userId string, subject string, ) *SendNotificationBody`
+`func NewSendNotificationBody(userId string, subject string, message string, ) *SendNotificationBody`
 
 NewSendNotificationBody instantiates a new SendNotificationBody object
 This constructor will assign default values to properties that have it defined,
@@ -26,26 +26,6 @@ will change when the set of required properties is changed
 NewSendNotificationBodyWithDefaults instantiates a new SendNotificationBody object
 This constructor will only assign default values to properties that have it defined,
 but it doesn't guarantee that properties required by API are set
-
-### GetMessage
-
-`func (o *SendNotificationBody) GetMessage() string`
-
-GetMessage returns the Message field if non-nil, zero value otherwise.
-
-### GetMessageOk
-
-`func (o *SendNotificationBody) GetMessageOk() (*string, bool)`
-
-GetMessageOk returns a tuple with the Message field if it's non-nil, zero value otherwise
-and a boolean to check if the value has been set.
-
-### SetMessage
-
-`func (o *SendNotificationBody) SetMessage(v string)`
-
-SetMessage sets Message field to given value.
-
 
 ### GetUserId
 
@@ -85,6 +65,26 @@ and a boolean to check if the value has been set.
 `func (o *SendNotificationBody) SetSubject(v string)`
 
 SetSubject sets Subject field to given value.
+
+
+### GetMessage
+
+`func (o *SendNotificationBody) GetMessage() string`
+
+GetMessage returns the Message field if non-nil, zero value otherwise.
+
+### GetMessageOk
+
+`func (o *SendNotificationBody) GetMessageOk() (*string, bool)`
+
+GetMessageOk returns a tuple with the Message field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetMessage
+
+`func (o *SendNotificationBody) SetMessage(v string)`
+
+SetMessage sets Message field to given value.
 
 
 
