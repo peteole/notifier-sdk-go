@@ -171,7 +171,7 @@ func (a *CrateApiService) HandleGetChannelsExecute(r ApiHandleGetChannelsRequest
 		return localVarReturnValue, nil, &GenericOpenAPIError{error: err.Error()}
 	}
 
-	localVarPath := localBasePath + "/notify/get_channels/{user_id}"
+	localVarPath := localBasePath + "/get_channels/{user_id}"
 	localVarPath = strings.Replace(localVarPath, "{"+"user_id"+"}", url.PathEscape(parameterToString(r.userId, "")), -1)
 
 	localVarHeaderParams := make(map[string]string)

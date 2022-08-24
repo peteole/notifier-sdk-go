@@ -17,18 +17,18 @@ import (
 
 // ChannelsResponse struct for ChannelsResponse
 type ChannelsResponse struct {
-	Channels []ChannelResponse `json:"channels"`
 	UserId string `json:"user_id"`
+	Channels []ChannelResponse `json:"channels"`
 }
 
 // NewChannelsResponse instantiates a new ChannelsResponse object
 // This constructor will assign default values to properties that have it defined,
 // and makes sure properties required by API are set, but the set of arguments
 // will change when the set of required properties is changed
-func NewChannelsResponse(channels []ChannelResponse, userId string) *ChannelsResponse {
+func NewChannelsResponse(userId string, channels []ChannelResponse) *ChannelsResponse {
 	this := ChannelsResponse{}
-	this.Channels = channels
 	this.UserId = userId
+	this.Channels = channels
 	return &this
 }
 
@@ -38,30 +38,6 @@ func NewChannelsResponse(channels []ChannelResponse, userId string) *ChannelsRes
 func NewChannelsResponseWithDefaults() *ChannelsResponse {
 	this := ChannelsResponse{}
 	return &this
-}
-
-// GetChannels returns the Channels field value
-func (o *ChannelsResponse) GetChannels() []ChannelResponse {
-	if o == nil {
-		var ret []ChannelResponse
-		return ret
-	}
-
-	return o.Channels
-}
-
-// GetChannelsOk returns a tuple with the Channels field value
-// and a boolean to check if the value has been set.
-func (o *ChannelsResponse) GetChannelsOk() ([]ChannelResponse, bool) {
-	if o == nil {
-		return nil, false
-	}
-	return o.Channels, true
-}
-
-// SetChannels sets field value
-func (o *ChannelsResponse) SetChannels(v []ChannelResponse) {
-	o.Channels = v
 }
 
 // GetUserId returns the UserId field value
@@ -88,13 +64,37 @@ func (o *ChannelsResponse) SetUserId(v string) {
 	o.UserId = v
 }
 
+// GetChannels returns the Channels field value
+func (o *ChannelsResponse) GetChannels() []ChannelResponse {
+	if o == nil {
+		var ret []ChannelResponse
+		return ret
+	}
+
+	return o.Channels
+}
+
+// GetChannelsOk returns a tuple with the Channels field value
+// and a boolean to check if the value has been set.
+func (o *ChannelsResponse) GetChannelsOk() ([]ChannelResponse, bool) {
+	if o == nil {
+		return nil, false
+	}
+	return o.Channels, true
+}
+
+// SetChannels sets field value
+func (o *ChannelsResponse) SetChannels(v []ChannelResponse) {
+	o.Channels = v
+}
+
 func (o ChannelsResponse) MarshalJSON() ([]byte, error) {
 	toSerialize := map[string]interface{}{}
 	if true {
-		toSerialize["channels"] = o.Channels
+		toSerialize["user_id"] = o.UserId
 	}
 	if true {
-		toSerialize["user_id"] = o.UserId
+		toSerialize["channels"] = o.Channels
 	}
 	return json.Marshal(toSerialize)
 }

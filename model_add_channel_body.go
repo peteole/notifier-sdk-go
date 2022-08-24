@@ -17,20 +17,20 @@ import (
 
 // AddChannelBody struct for AddChannelBody
 type AddChannelBody struct {
+	UserId string `json:"user_id"`
 	ServiceId string `json:"service_id"`
 	ServiceUsername string `json:"service_username"`
-	UserId string `json:"user_id"`
 }
 
 // NewAddChannelBody instantiates a new AddChannelBody object
 // This constructor will assign default values to properties that have it defined,
 // and makes sure properties required by API are set, but the set of arguments
 // will change when the set of required properties is changed
-func NewAddChannelBody(serviceId string, serviceUsername string, userId string) *AddChannelBody {
+func NewAddChannelBody(userId string, serviceId string, serviceUsername string) *AddChannelBody {
 	this := AddChannelBody{}
+	this.UserId = userId
 	this.ServiceId = serviceId
 	this.ServiceUsername = serviceUsername
-	this.UserId = userId
 	return &this
 }
 
@@ -40,6 +40,30 @@ func NewAddChannelBody(serviceId string, serviceUsername string, userId string) 
 func NewAddChannelBodyWithDefaults() *AddChannelBody {
 	this := AddChannelBody{}
 	return &this
+}
+
+// GetUserId returns the UserId field value
+func (o *AddChannelBody) GetUserId() string {
+	if o == nil {
+		var ret string
+		return ret
+	}
+
+	return o.UserId
+}
+
+// GetUserIdOk returns a tuple with the UserId field value
+// and a boolean to check if the value has been set.
+func (o *AddChannelBody) GetUserIdOk() (*string, bool) {
+	if o == nil {
+		return nil, false
+	}
+	return &o.UserId, true
+}
+
+// SetUserId sets field value
+func (o *AddChannelBody) SetUserId(v string) {
+	o.UserId = v
 }
 
 // GetServiceId returns the ServiceId field value
@@ -90,40 +114,16 @@ func (o *AddChannelBody) SetServiceUsername(v string) {
 	o.ServiceUsername = v
 }
 
-// GetUserId returns the UserId field value
-func (o *AddChannelBody) GetUserId() string {
-	if o == nil {
-		var ret string
-		return ret
-	}
-
-	return o.UserId
-}
-
-// GetUserIdOk returns a tuple with the UserId field value
-// and a boolean to check if the value has been set.
-func (o *AddChannelBody) GetUserIdOk() (*string, bool) {
-	if o == nil {
-		return nil, false
-	}
-	return &o.UserId, true
-}
-
-// SetUserId sets field value
-func (o *AddChannelBody) SetUserId(v string) {
-	o.UserId = v
-}
-
 func (o AddChannelBody) MarshalJSON() ([]byte, error) {
 	toSerialize := map[string]interface{}{}
+	if true {
+		toSerialize["user_id"] = o.UserId
+	}
 	if true {
 		toSerialize["service_id"] = o.ServiceId
 	}
 	if true {
 		toSerialize["service_username"] = o.ServiceUsername
-	}
-	if true {
-		toSerialize["user_id"] = o.UserId
 	}
 	return json.Marshal(toSerialize)
 }

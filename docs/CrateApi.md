@@ -5,7 +5,7 @@ All URIs are relative to *http://localhost*
 Method | HTTP request | Description
 ------------- | ------------- | -------------
 [**HandleAddChannel**](CrateApi.md#HandleAddChannel) | **Post** /add_channel | Add channel
-[**HandleGetChannels**](CrateApi.md#HandleGetChannels) | **Get** /notify/get_channels/{user_id} | Get notification channels for user
+[**HandleGetChannels**](CrateApi.md#HandleGetChannels) | **Get** /get_channels/{user_id} | Get notification channels for user
 [**HandleGetTelegramChatId**](CrateApi.md#HandleGetTelegramChatId) | **Post** /get_telegram_chat_id | Get the chat ID of a telegram username
 [**HandleNotify**](CrateApi.md#HandleNotify) | **Post** /notify | Send notification
 [**HandleRemoveChannel**](CrateApi.md#HandleRemoveChannel) | **Post** /remove_channel | Remove channel
@@ -33,7 +33,7 @@ import (
 )
 
 func main() {
-    addChannelBody := *openapiclient.NewAddChannelBody("ServiceId_example", "ServiceUsername_example", "UserId_example") // AddChannelBody | 
+    addChannelBody := *openapiclient.NewAddChannelBody("UserId_example", "ServiceId_example", "ServiceUsername_example") // AddChannelBody | 
 
     configuration := openapiclient.NewConfiguration()
     apiClient := openapiclient.NewAPIClient(configuration)
@@ -231,7 +231,7 @@ import (
 )
 
 func main() {
-    notifyBody := *openapiclient.NewNotifyBody("UserId_example", "Subject_example", "Message_example") // NotifyBody | 
+    notifyBody := *openapiclient.NewNotifyBody("Message_example", "UserId_example", "Subject_example") // NotifyBody | 
 
     configuration := openapiclient.NewConfiguration()
     apiClient := openapiclient.NewAPIClient(configuration)
@@ -295,7 +295,7 @@ import (
 )
 
 func main() {
-    removeChannelBody := *openapiclient.NewRemoveChannelBody("ServiceId_example", "UserId_example") // RemoveChannelBody | 
+    removeChannelBody := *openapiclient.NewRemoveChannelBody("UserId_example", "ServiceId_example") // RemoveChannelBody | 
 
     configuration := openapiclient.NewConfiguration()
     apiClient := openapiclient.NewAPIClient(configuration)
