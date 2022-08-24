@@ -4,15 +4,15 @@
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**ServiceUsername** | **string** |  | 
 **UserId** | **string** |  | 
 **ServiceId** | **string** |  | 
+**ServiceUsername** | **string** |  | 
 
 ## Methods
 
 ### NewAddChannelBody
 
-`func NewAddChannelBody(serviceUsername string, userId string, serviceId string, ) *AddChannelBody`
+`func NewAddChannelBody(userId string, serviceId string, serviceUsername string, ) *AddChannelBody`
 
 NewAddChannelBody instantiates a new AddChannelBody object
 This constructor will assign default values to properties that have it defined,
@@ -26,26 +26,6 @@ will change when the set of required properties is changed
 NewAddChannelBodyWithDefaults instantiates a new AddChannelBody object
 This constructor will only assign default values to properties that have it defined,
 but it doesn't guarantee that properties required by API are set
-
-### GetServiceUsername
-
-`func (o *AddChannelBody) GetServiceUsername() string`
-
-GetServiceUsername returns the ServiceUsername field if non-nil, zero value otherwise.
-
-### GetServiceUsernameOk
-
-`func (o *AddChannelBody) GetServiceUsernameOk() (*string, bool)`
-
-GetServiceUsernameOk returns a tuple with the ServiceUsername field if it's non-nil, zero value otherwise
-and a boolean to check if the value has been set.
-
-### SetServiceUsername
-
-`func (o *AddChannelBody) SetServiceUsername(v string)`
-
-SetServiceUsername sets ServiceUsername field to given value.
-
 
 ### GetUserId
 
@@ -85,6 +65,26 @@ and a boolean to check if the value has been set.
 `func (o *AddChannelBody) SetServiceId(v string)`
 
 SetServiceId sets ServiceId field to given value.
+
+
+### GetServiceUsername
+
+`func (o *AddChannelBody) GetServiceUsername() string`
+
+GetServiceUsername returns the ServiceUsername field if non-nil, zero value otherwise.
+
+### GetServiceUsernameOk
+
+`func (o *AddChannelBody) GetServiceUsernameOk() (*string, bool)`
+
+GetServiceUsernameOk returns a tuple with the ServiceUsername field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetServiceUsername
+
+`func (o *AddChannelBody) SetServiceUsername(v string)`
+
+SetServiceUsername sets ServiceUsername field to given value.
 
 
 
