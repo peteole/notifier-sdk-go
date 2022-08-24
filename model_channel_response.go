@@ -15,59 +15,33 @@ import (
 	"encoding/json"
 )
 
-// AddChannelBody struct for AddChannelBody
-type AddChannelBody struct {
-	UserId string `json:"user_id"`
+// ChannelResponse struct for ChannelResponse
+type ChannelResponse struct {
 	ServiceUsername string `json:"service_username"`
 	ServiceId string `json:"service_id"`
 }
 
-// NewAddChannelBody instantiates a new AddChannelBody object
+// NewChannelResponse instantiates a new ChannelResponse object
 // This constructor will assign default values to properties that have it defined,
 // and makes sure properties required by API are set, but the set of arguments
 // will change when the set of required properties is changed
-func NewAddChannelBody(userId string, serviceUsername string, serviceId string) *AddChannelBody {
-	this := AddChannelBody{}
-	this.UserId = userId
+func NewChannelResponse(serviceUsername string, serviceId string) *ChannelResponse {
+	this := ChannelResponse{}
 	this.ServiceUsername = serviceUsername
 	this.ServiceId = serviceId
 	return &this
 }
 
-// NewAddChannelBodyWithDefaults instantiates a new AddChannelBody object
+// NewChannelResponseWithDefaults instantiates a new ChannelResponse object
 // This constructor will only assign default values to properties that have it defined,
 // but it doesn't guarantee that properties required by API are set
-func NewAddChannelBodyWithDefaults() *AddChannelBody {
-	this := AddChannelBody{}
+func NewChannelResponseWithDefaults() *ChannelResponse {
+	this := ChannelResponse{}
 	return &this
 }
 
-// GetUserId returns the UserId field value
-func (o *AddChannelBody) GetUserId() string {
-	if o == nil {
-		var ret string
-		return ret
-	}
-
-	return o.UserId
-}
-
-// GetUserIdOk returns a tuple with the UserId field value
-// and a boolean to check if the value has been set.
-func (o *AddChannelBody) GetUserIdOk() (*string, bool) {
-	if o == nil {
-		return nil, false
-	}
-	return &o.UserId, true
-}
-
-// SetUserId sets field value
-func (o *AddChannelBody) SetUserId(v string) {
-	o.UserId = v
-}
-
 // GetServiceUsername returns the ServiceUsername field value
-func (o *AddChannelBody) GetServiceUsername() string {
+func (o *ChannelResponse) GetServiceUsername() string {
 	if o == nil {
 		var ret string
 		return ret
@@ -78,7 +52,7 @@ func (o *AddChannelBody) GetServiceUsername() string {
 
 // GetServiceUsernameOk returns a tuple with the ServiceUsername field value
 // and a boolean to check if the value has been set.
-func (o *AddChannelBody) GetServiceUsernameOk() (*string, bool) {
+func (o *ChannelResponse) GetServiceUsernameOk() (*string, bool) {
 	if o == nil {
 		return nil, false
 	}
@@ -86,12 +60,12 @@ func (o *AddChannelBody) GetServiceUsernameOk() (*string, bool) {
 }
 
 // SetServiceUsername sets field value
-func (o *AddChannelBody) SetServiceUsername(v string) {
+func (o *ChannelResponse) SetServiceUsername(v string) {
 	o.ServiceUsername = v
 }
 
 // GetServiceId returns the ServiceId field value
-func (o *AddChannelBody) GetServiceId() string {
+func (o *ChannelResponse) GetServiceId() string {
 	if o == nil {
 		var ret string
 		return ret
@@ -102,7 +76,7 @@ func (o *AddChannelBody) GetServiceId() string {
 
 // GetServiceIdOk returns a tuple with the ServiceId field value
 // and a boolean to check if the value has been set.
-func (o *AddChannelBody) GetServiceIdOk() (*string, bool) {
+func (o *ChannelResponse) GetServiceIdOk() (*string, bool) {
 	if o == nil {
 		return nil, false
 	}
@@ -110,15 +84,12 @@ func (o *AddChannelBody) GetServiceIdOk() (*string, bool) {
 }
 
 // SetServiceId sets field value
-func (o *AddChannelBody) SetServiceId(v string) {
+func (o *ChannelResponse) SetServiceId(v string) {
 	o.ServiceId = v
 }
 
-func (o AddChannelBody) MarshalJSON() ([]byte, error) {
+func (o ChannelResponse) MarshalJSON() ([]byte, error) {
 	toSerialize := map[string]interface{}{}
-	if true {
-		toSerialize["user_id"] = o.UserId
-	}
 	if true {
 		toSerialize["service_username"] = o.ServiceUsername
 	}
@@ -128,38 +99,38 @@ func (o AddChannelBody) MarshalJSON() ([]byte, error) {
 	return json.Marshal(toSerialize)
 }
 
-type NullableAddChannelBody struct {
-	value *AddChannelBody
+type NullableChannelResponse struct {
+	value *ChannelResponse
 	isSet bool
 }
 
-func (v NullableAddChannelBody) Get() *AddChannelBody {
+func (v NullableChannelResponse) Get() *ChannelResponse {
 	return v.value
 }
 
-func (v *NullableAddChannelBody) Set(val *AddChannelBody) {
+func (v *NullableChannelResponse) Set(val *ChannelResponse) {
 	v.value = val
 	v.isSet = true
 }
 
-func (v NullableAddChannelBody) IsSet() bool {
+func (v NullableChannelResponse) IsSet() bool {
 	return v.isSet
 }
 
-func (v *NullableAddChannelBody) Unset() {
+func (v *NullableChannelResponse) Unset() {
 	v.value = nil
 	v.isSet = false
 }
 
-func NewNullableAddChannelBody(val *AddChannelBody) *NullableAddChannelBody {
-	return &NullableAddChannelBody{value: val, isSet: true}
+func NewNullableChannelResponse(val *ChannelResponse) *NullableChannelResponse {
+	return &NullableChannelResponse{value: val, isSet: true}
 }
 
-func (v NullableAddChannelBody) MarshalJSON() ([]byte, error) {
+func (v NullableChannelResponse) MarshalJSON() ([]byte, error) {
 	return json.Marshal(v.value)
 }
 
-func (v *NullableAddChannelBody) UnmarshalJSON(src []byte) error {
+func (v *NullableChannelResponse) UnmarshalJSON(src []byte) error {
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)
 }

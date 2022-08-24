@@ -6,6 +6,7 @@ api_crate.go
 client.go
 configuration.go
 docs/AddChannelBody.md
+docs/ChannelResponse.md
 docs/ChannelsResponse.md
 docs/CrateApi.md
 docs/GetTelegramChatIdBody.md
@@ -15,6 +16,7 @@ git_push.sh
 go.mod
 go.sum
 model_add_channel_body.go
+model_channel_response.go
 model_channels_response.go
 model_get_telegram_chat_id_body.go
 model_notify_body.go
