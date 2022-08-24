@@ -33,7 +33,7 @@ import (
 )
 
 func main() {
-    addChannelBody := *openapiclient.NewAddChannelBody("UserId_example", "ServiceId_example", "ServiceUsername_example") // AddChannelBody | 
+    addChannelBody := *openapiclient.NewAddChannelBody("ServiceId_example", "ServiceUsername_example", "UserId_example") // AddChannelBody | 
 
     configuration := openapiclient.NewConfiguration()
     apiClient := openapiclient.NewAPIClient(configuration)
@@ -301,7 +301,7 @@ import (
 )
 
 func main() {
-    removeChannelBody := *openapiclient.NewRemoveChannelBody("ServiceId_example", "UserId_example") // RemoveChannelBody | 
+    removeChannelBody := *openapiclient.NewRemoveChannelBody("UserId_example", "ServiceId_example") // RemoveChannelBody | 
 
     configuration := openapiclient.NewConfiguration()
     apiClient := openapiclient.NewAPIClient(configuration)

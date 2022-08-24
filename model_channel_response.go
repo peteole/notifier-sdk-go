@@ -17,18 +17,18 @@ import (
 
 // ChannelResponse struct for ChannelResponse
 type ChannelResponse struct {
-	ServiceUsername string `json:"service_username"`
 	ServiceId string `json:"service_id"`
+	ServiceUsername string `json:"service_username"`
 }
 
 // NewChannelResponse instantiates a new ChannelResponse object
 // This constructor will assign default values to properties that have it defined,
 // and makes sure properties required by API are set, but the set of arguments
 // will change when the set of required properties is changed
-func NewChannelResponse(serviceUsername string, serviceId string) *ChannelResponse {
+func NewChannelResponse(serviceId string, serviceUsername string) *ChannelResponse {
 	this := ChannelResponse{}
-	this.ServiceUsername = serviceUsername
 	this.ServiceId = serviceId
+	this.ServiceUsername = serviceUsername
 	return &this
 }
 
@@ -38,30 +38,6 @@ func NewChannelResponse(serviceUsername string, serviceId string) *ChannelRespon
 func NewChannelResponseWithDefaults() *ChannelResponse {
 	this := ChannelResponse{}
 	return &this
-}
-
-// GetServiceUsername returns the ServiceUsername field value
-func (o *ChannelResponse) GetServiceUsername() string {
-	if o == nil {
-		var ret string
-		return ret
-	}
-
-	return o.ServiceUsername
-}
-
-// GetServiceUsernameOk returns a tuple with the ServiceUsername field value
-// and a boolean to check if the value has been set.
-func (o *ChannelResponse) GetServiceUsernameOk() (*string, bool) {
-	if o == nil {
-		return nil, false
-	}
-	return &o.ServiceUsername, true
-}
-
-// SetServiceUsername sets field value
-func (o *ChannelResponse) SetServiceUsername(v string) {
-	o.ServiceUsername = v
 }
 
 // GetServiceId returns the ServiceId field value
@@ -88,13 +64,37 @@ func (o *ChannelResponse) SetServiceId(v string) {
 	o.ServiceId = v
 }
 
+// GetServiceUsername returns the ServiceUsername field value
+func (o *ChannelResponse) GetServiceUsername() string {
+	if o == nil {
+		var ret string
+		return ret
+	}
+
+	return o.ServiceUsername
+}
+
+// GetServiceUsernameOk returns a tuple with the ServiceUsername field value
+// and a boolean to check if the value has been set.
+func (o *ChannelResponse) GetServiceUsernameOk() (*string, bool) {
+	if o == nil {
+		return nil, false
+	}
+	return &o.ServiceUsername, true
+}
+
+// SetServiceUsername sets field value
+func (o *ChannelResponse) SetServiceUsername(v string) {
+	o.ServiceUsername = v
+}
+
 func (o ChannelResponse) MarshalJSON() ([]byte, error) {
 	toSerialize := map[string]interface{}{}
 	if true {
-		toSerialize["service_username"] = o.ServiceUsername
+		toSerialize["service_id"] = o.ServiceId
 	}
 	if true {
-		toSerialize["service_id"] = o.ServiceId
+		toSerialize["service_username"] = o.ServiceUsername
 	}
 	return json.Marshal(toSerialize)
 }

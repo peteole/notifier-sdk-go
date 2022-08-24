@@ -4,14 +4,14 @@
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**ServiceUsername** | **string** |  | 
 **ServiceId** | **string** |  | 
+**ServiceUsername** | **string** |  | 
 
 ## Methods
 
 ### NewChannelResponse
 
-`func NewChannelResponse(serviceUsername string, serviceId string, ) *ChannelResponse`
+`func NewChannelResponse(serviceId string, serviceUsername string, ) *ChannelResponse`
 
 NewChannelResponse instantiates a new ChannelResponse object
 This constructor will assign default values to properties that have it defined,
@@ -25,26 +25,6 @@ will change when the set of required properties is changed
 NewChannelResponseWithDefaults instantiates a new ChannelResponse object
 This constructor will only assign default values to properties that have it defined,
 but it doesn't guarantee that properties required by API are set
-
-### GetServiceUsername
-
-`func (o *ChannelResponse) GetServiceUsername() string`
-
-GetServiceUsername returns the ServiceUsername field if non-nil, zero value otherwise.
-
-### GetServiceUsernameOk
-
-`func (o *ChannelResponse) GetServiceUsernameOk() (*string, bool)`
-
-GetServiceUsernameOk returns a tuple with the ServiceUsername field if it's non-nil, zero value otherwise
-and a boolean to check if the value has been set.
-
-### SetServiceUsername
-
-`func (o *ChannelResponse) SetServiceUsername(v string)`
-
-SetServiceUsername sets ServiceUsername field to given value.
-
 
 ### GetServiceId
 
@@ -64,6 +44,26 @@ and a boolean to check if the value has been set.
 `func (o *ChannelResponse) SetServiceId(v string)`
 
 SetServiceId sets ServiceId field to given value.
+
+
+### GetServiceUsername
+
+`func (o *ChannelResponse) GetServiceUsername() string`
+
+GetServiceUsername returns the ServiceUsername field if non-nil, zero value otherwise.
+
+### GetServiceUsernameOk
+
+`func (o *ChannelResponse) GetServiceUsernameOk() (*string, bool)`
+
+GetServiceUsernameOk returns a tuple with the ServiceUsername field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetServiceUsername
+
+`func (o *ChannelResponse) SetServiceUsername(v string)`
+
+SetServiceUsername sets ServiceUsername field to given value.
 
 
 
