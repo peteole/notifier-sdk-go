@@ -79,6 +79,7 @@ All URIs are relative to *http://localhost*
 Class | Method | HTTP request | Description
 ------------ | ------------- | ------------- | -------------
 *CrateApi* | [**HandleAddChannel**](docs/CrateApi.md#handleaddchannel) | **Post** /add_channel | Add channel
+*CrateApi* | [**HandleGetChannels**](docs/CrateApi.md#handlegetchannels) | **Get** /notify/get_channels/{user_id} | Get notification channels for user
 *CrateApi* | [**HandleGetTelegramChatId**](docs/CrateApi.md#handlegettelegramchatid) | **Post** /get_telegram_chat_id | Get the chat ID of a telegram username
 *CrateApi* | [**HandleNotify**](docs/CrateApi.md#handlenotify) | **Post** /notify | Send notification
 *CrateApi* | [**HandleRemoveChannel**](docs/CrateApi.md#handleremovechannel) | **Post** /remove_channel | Remove channel

@@ -18,19 +18,19 @@ import (
 // NotifyBody struct for NotifyBody
 type NotifyBody struct {
 	UserId string `json:"user_id"`
-	Message string `json:"message"`
 	Subject string `json:"subject"`
+	Message string `json:"message"`
 }
 
 // NewNotifyBody instantiates a new NotifyBody object
 // This constructor will assign default values to properties that have it defined,
 // and makes sure properties required by API are set, but the set of arguments
 // will change when the set of required properties is changed
-func NewNotifyBody(userId string, message string, subject string) *NotifyBody {
+func NewNotifyBody(userId string, subject string, message string) *NotifyBody {
 	this := NotifyBody{}
 	this.UserId = userId
-	this.Message = message
 	this.Subject = subject
+	this.Message = message
 	return &this
 }
 
@@ -66,30 +66,6 @@ func (o *NotifyBody) SetUserId(v string) {
 	o.UserId = v
 }
 
-// GetMessage returns the Message field value
-func (o *NotifyBody) GetMessage() string {
-	if o == nil {
-		var ret string
-		return ret
-	}
-
-	return o.Message
-}
-
-// GetMessageOk returns a tuple with the Message field value
-// and a boolean to check if the value has been set.
-func (o *NotifyBody) GetMessageOk() (*string, bool) {
-	if o == nil {
-		return nil, false
-	}
-	return &o.Message, true
-}
-
-// SetMessage sets field value
-func (o *NotifyBody) SetMessage(v string) {
-	o.Message = v
-}
-
 // GetSubject returns the Subject field value
 func (o *NotifyBody) GetSubject() string {
 	if o == nil {
@@ -114,16 +90,40 @@ func (o *NotifyBody) SetSubject(v string) {
 	o.Subject = v
 }
 
+// GetMessage returns the Message field value
+func (o *NotifyBody) GetMessage() string {
+	if o == nil {
+		var ret string
+		return ret
+	}
+
+	return o.Message
+}
+
+// GetMessageOk returns a tuple with the Message field value
+// and a boolean to check if the value has been set.
+func (o *NotifyBody) GetMessageOk() (*string, bool) {
+	if o == nil {
+		return nil, false
+	}
+	return &o.Message, true
+}
+
+// SetMessage sets field value
+func (o *NotifyBody) SetMessage(v string) {
+	o.Message = v
+}
+
 func (o NotifyBody) MarshalJSON() ([]byte, error) {
 	toSerialize := map[string]interface{}{}
 	if true {
 		toSerialize["user_id"] = o.UserId
 	}
 	if true {
-		toSerialize["message"] = o.Message
+		toSerialize["subject"] = o.Subject
 	}
 	if true {
-		toSerialize["subject"] = o.Subject
+		toSerialize["message"] = o.Message
 	}
 	return json.Marshal(toSerialize)
 }

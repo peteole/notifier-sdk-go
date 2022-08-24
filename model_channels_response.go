@@ -17,18 +17,18 @@ import (
 
 // ChannelsResponse struct for ChannelsResponse
 type ChannelsResponse struct {
-	UserId string `json:"user_id"`
 	Channels []ChannelResponse `json:"channels"`
+	UserId string `json:"user_id"`
 }
 
 // NewChannelsResponse instantiates a new ChannelsResponse object
 // This constructor will assign default values to properties that have it defined,
 // and makes sure properties required by API are set, but the set of arguments
 // will change when the set of required properties is changed
-func NewChannelsResponse(userId string, channels []ChannelResponse) *ChannelsResponse {
+func NewChannelsResponse(channels []ChannelResponse, userId string) *ChannelsResponse {
 	this := ChannelsResponse{}
-	this.UserId = userId
 	this.Channels = channels
+	this.UserId = userId
 	return &this
 }
 
@@ -38,30 +38,6 @@ func NewChannelsResponse(userId string, channels []ChannelResponse) *ChannelsRes
 func NewChannelsResponseWithDefaults() *ChannelsResponse {
 	this := ChannelsResponse{}
 	return &this
-}
-
-// GetUserId returns the UserId field value
-func (o *ChannelsResponse) GetUserId() string {
-	if o == nil {
-		var ret string
-		return ret
-	}
-
-	return o.UserId
-}
-
-// GetUserIdOk returns a tuple with the UserId field value
-// and a boolean to check if the value has been set.
-func (o *ChannelsResponse) GetUserIdOk() (*string, bool) {
-	if o == nil {
-		return nil, false
-	}
-	return &o.UserId, true
-}
-
-// SetUserId sets field value
-func (o *ChannelsResponse) SetUserId(v string) {
-	o.UserId = v
 }
 
 // GetChannels returns the Channels field value
@@ -88,13 +64,37 @@ func (o *ChannelsResponse) SetChannels(v []ChannelResponse) {
 	o.Channels = v
 }
 
+// GetUserId returns the UserId field value
+func (o *ChannelsResponse) GetUserId() string {
+	if o == nil {
+		var ret string
+		return ret
+	}
+
+	return o.UserId
+}
+
+// GetUserIdOk returns a tuple with the UserId field value
+// and a boolean to check if the value has been set.
+func (o *ChannelsResponse) GetUserIdOk() (*string, bool) {
+	if o == nil {
+		return nil, false
+	}
+	return &o.UserId, true
+}
+
+// SetUserId sets field value
+func (o *ChannelsResponse) SetUserId(v string) {
+	o.UserId = v
+}
+
 func (o ChannelsResponse) MarshalJSON() ([]byte, error) {
 	toSerialize := map[string]interface{}{}
 	if true {
-		toSerialize["user_id"] = o.UserId
+		toSerialize["channels"] = o.Channels
 	}
 	if true {
-		toSerialize["channels"] = o.Channels
+		toSerialize["user_id"] = o.UserId
 	}
 	return json.Marshal(toSerialize)
 }
