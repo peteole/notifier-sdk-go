@@ -4,15 +4,15 @@
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**UserId** | **string** |  | 
-**ServiceUsername** | **string** |  | 
 **ServiceId** | **string** |  | 
+**ServiceUsername** | **string** |  | 
+**UserId** | **string** |  | 
 
 ## Methods
 
 ### NewAddChannelBody
 
-`func NewAddChannelBody(userId string, serviceUsername string, serviceId string, ) *AddChannelBody`
+`func NewAddChannelBody(serviceId string, serviceUsername string, userId string, ) *AddChannelBody`
 
 NewAddChannelBody instantiates a new AddChannelBody object
 This constructor will assign default values to properties that have it defined,
@@ -27,24 +27,24 @@ NewAddChannelBodyWithDefaults instantiates a new AddChannelBody object
 This constructor will only assign default values to properties that have it defined,
 but it doesn't guarantee that properties required by API are set
 
-### GetUserId
+### GetServiceId
 
-`func (o *AddChannelBody) GetUserId() string`
+`func (o *AddChannelBody) GetServiceId() string`
 
-GetUserId returns the UserId field if non-nil, zero value otherwise.
+GetServiceId returns the ServiceId field if non-nil, zero value otherwise.
 
-### GetUserIdOk
+### GetServiceIdOk
 
-`func (o *AddChannelBody) GetUserIdOk() (*string, bool)`
+`func (o *AddChannelBody) GetServiceIdOk() (*string, bool)`
 
-GetUserIdOk returns a tuple with the UserId field if it's non-nil, zero value otherwise
+GetServiceIdOk returns a tuple with the ServiceId field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
-### SetUserId
+### SetServiceId
 
-`func (o *AddChannelBody) SetUserId(v string)`
+`func (o *AddChannelBody) SetServiceId(v string)`
 
-SetUserId sets UserId field to given value.
+SetServiceId sets ServiceId field to given value.
 
 
 ### GetServiceUsername
@@ -67,24 +67,24 @@ and a boolean to check if the value has been set.
 SetServiceUsername sets ServiceUsername field to given value.
 
 
-### GetServiceId
+### GetUserId
 
-`func (o *AddChannelBody) GetServiceId() string`
+`func (o *AddChannelBody) GetUserId() string`
 
-GetServiceId returns the ServiceId field if non-nil, zero value otherwise.
+GetUserId returns the UserId field if non-nil, zero value otherwise.
 
-### GetServiceIdOk
+### GetUserIdOk
 
-`func (o *AddChannelBody) GetServiceIdOk() (*string, bool)`
+`func (o *AddChannelBody) GetUserIdOk() (*string, bool)`
 
-GetServiceIdOk returns a tuple with the ServiceId field if it's non-nil, zero value otherwise
+GetUserIdOk returns a tuple with the UserId field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
-### SetServiceId
+### SetUserId
 
-`func (o *AddChannelBody) SetServiceId(v string)`
+`func (o *AddChannelBody) SetUserId(v string)`
 
-SetServiceId sets ServiceId field to given value.
+SetUserId sets UserId field to given value.
 
 
 

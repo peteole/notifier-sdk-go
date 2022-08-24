@@ -32,7 +32,7 @@ import (
 )
 
 func main() {
-    addChannelBody := *openapiclient.NewAddChannelBody("UserId_example", "ServiceUsername_example", "ServiceId_example") // AddChannelBody | 
+    addChannelBody := *openapiclient.NewAddChannelBody("ServiceId_example", "ServiceUsername_example", "UserId_example") // AddChannelBody | 
 
     configuration := openapiclient.NewConfiguration()
     apiClient := openapiclient.NewAPIClient(configuration)
@@ -96,7 +96,7 @@ import (
 )
 
 func main() {
-    getTelegramChatIdBody := *openapiclient.NewGetTelegramChatIdBody("TelegramUsername_example", "UserId_example") // GetTelegramChatIdBody | 
+    getTelegramChatIdBody := *openapiclient.NewGetTelegramChatIdBody("TelegramUsername_example") // GetTelegramChatIdBody | 
 
     configuration := openapiclient.NewConfiguration()
     apiClient := openapiclient.NewAPIClient(configuration)
@@ -141,7 +141,7 @@ No authorization required
 
 ## HandleNotify
 
-> HandleNotify(ctx).SendNotificationBody(sendNotificationBody).Execute()
+> HandleNotify(ctx).NotifyBody(notifyBody).Execute()
 
 Send notification
 
@@ -160,11 +160,11 @@ import (
 )
 
 func main() {
-    sendNotificationBody := *openapiclient.NewSendNotificationBody("Subject_example", "UserId_example", "Message_example") // SendNotificationBody | 
+    notifyBody := *openapiclient.NewNotifyBody("UserId_example", "Message_example", "Subject_example") // NotifyBody | 
 
     configuration := openapiclient.NewConfiguration()
     apiClient := openapiclient.NewAPIClient(configuration)
-    resp, r, err := apiClient.CrateApi.HandleNotify(context.Background()).SendNotificationBody(sendNotificationBody).Execute()
+    resp, r, err := apiClient.CrateApi.HandleNotify(context.Background()).NotifyBody(notifyBody).Execute()
     if err != nil {
         fmt.Fprintf(os.Stderr, "Error when calling `CrateApi.HandleNotify``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
@@ -183,7 +183,7 @@ Other parameters are passed through a pointer to a apiHandleNotifyRequest struct
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **sendNotificationBody** | [**SendNotificationBody**](SendNotificationBody.md) |  | 
+ **notifyBody** | [**NotifyBody**](NotifyBody.md) |  | 
 
 ### Return type
 
